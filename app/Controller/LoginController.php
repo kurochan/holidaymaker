@@ -3,16 +3,16 @@
 class LoginController extends AppController{
 
 	public function index(){
+        $redirectUrl = $this->Session->read('redirect');
+        $redirectUrl = $redirectUrl ? $redirectUrl : '/';
         if($this->Session->check('redirect')){
-            $redirectUrl = $this->Session->read('redirect');
-            $redirectUrl = $redirectUrl ? $redirectUrl : '/';
             $this->Session->delete('redirect');
             $this->redirect($redirectUrl);
             return;
         }
 
         if (self::isFBLoggedIn()) {
-            echo "OK!";
+            $this->redirect(array('controller' => 'Top', 'action' => 'index'));
         } else {
             $this->Session->write('redirect', $this->referer());
             $facebook = self::getFacebook();
