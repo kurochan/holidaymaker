@@ -21,6 +21,7 @@
  */
 
 App::uses('Controller', 'Controller');
+App::import('Vendor', 'predis/autoload');
 
 /**
  * Application Controller
@@ -32,4 +33,13 @@ App::uses('Controller', 'Controller');
  * @link http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+    private static $redis;
+
+    public static function getRedis() {
+        if (is_null(self::$redis)) {
+            self::$redis = new Predis\Client(Configure::read('redis-client'));
+            self::$redis->auth(Configure::read('redis-auth'));
+        }
+        return self::$redis;
+    }
 }
