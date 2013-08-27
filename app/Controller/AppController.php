@@ -22,6 +22,7 @@
 
 App::uses('Controller', 'Controller');
 App::import('Vendor', 'predis/autoload');
+App::import('Vendor', 'facebook-php-sdk/src/facebook');
 
 /**
  * Application Controller
@@ -34,6 +35,7 @@ App::import('Vendor', 'predis/autoload');
  */
 class AppController extends Controller {
     private static $redis;
+    private static $facebook;
 
     public static function getRedis() {
         if (is_null(self::$redis)) {
@@ -41,5 +43,13 @@ class AppController extends Controller {
             self::$redis->auth(Configure::read('redis-auth'));
         }
         return self::$redis;
+    }
+
+    public static function getFacebook() {
+        self::$facebook = new Facebook(array(
+            'appId'  => Configure::read('fb-app-id'),
+            'secret' => Configure::read('fb-secret'),
+        ));
+        return self::$facebook;
     }
 }
