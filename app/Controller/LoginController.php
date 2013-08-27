@@ -12,7 +12,7 @@ class LoginController extends AppController{
         }
 
         if (self::isFBLoggedIn()) {
-            $this->redirect(array('controller' => 'Top', 'action' => 'index'));
+            $this->redirect(array('controller' => 'Tops', 'action' => 'index'));
         } else {
             $this->Session->write('redirect', $this->referer());
             $facebook = self::getFacebook();
