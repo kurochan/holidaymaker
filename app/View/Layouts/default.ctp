@@ -17,13 +17,10 @@
 		padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
 	}
 	</style>
-	
+
 	<?php echo $this->Html->css('bootstrap-responsive.min'); ?>
-	<?php echo $this->Html->css('camera'); ?>
-	<?php echo $this->Html->script('jquery.min.js'); ?>
-	<?php echo $this->Html->script('jquery.easing.1.3.js'); ?>
-	<?php echo $this->Html->script('jquery.mobile.customized.min.js'); ?>
-	<?php echo $this->Html->script('camera.js'); ?>
+	<?php echo $this->Html->script('jquery.min'); ?>
+	<?php echo $this->Html->script('jquery-1.10.2.min'); ?>
 
 	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
