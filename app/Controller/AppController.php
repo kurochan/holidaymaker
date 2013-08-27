@@ -52,4 +52,20 @@ class AppController extends Controller {
         ));
         return self::$facebook;
     }
+
+    public static function isFBLoggedIn() {
+        $facebook = self::getFacebook();
+        $user = $facebook->getUser();
+        if ($user) {
+            try {
+                return true;
+            } catch (FacebookApiException $e) {
+                $user = null;
+                echo "Facebook認証に失敗しました。";
+                exit();
+            }
+        } else {
+            return false;
+        }
+    }
 }

@@ -3,25 +3,20 @@
 class LoginController extends AppController{
 
 	public function index(){
-        $facebook = self::getFacebook();
-        $user = $facebook->getUser();
-        if ($user) {
-            try {
-                //ログインしていたら、自分のユーザプロファイルを取得
-                $user_profile = $facebook->api('/me');
-                echo "OK!";
-
-            } catch (FacebookApiException $e) {
-                //ユーザプロファイル取得失敗 = ログインしていない
-                $user = null;
-                echo "NO!";
-            }
-        } else {
-            echo "<a href=\"".$facebook->getLoginUrl()."\">login!</a>";
+        if($this->Session->check('redirect')){
+            $redirectUrl = $this->Session->read('redirect');
+            $redirectUrl = $redirectUrl ? $redirectUrl : '/';
+            $this->Session->delete('redirect');
+            $this->redirect($redirectUrl);
+            return;
         }
-        exit();
-    }
 
-    private function isFBLoggedIn(){
+        if (self::isFBLoggedIn()) {
+            echo "OK!";
+        } else {
+            $this->Session->write('redirect', $this->referer());
+            $facebook = self::getFacebook();
+            $this->redirect(self::getFacebook()->getLoginUrl());
+        }
     }
 }
