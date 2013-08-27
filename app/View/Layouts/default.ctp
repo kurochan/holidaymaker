@@ -17,7 +17,13 @@
 		padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
 	}
 	</style>
+	
 	<?php echo $this->Html->css('bootstrap-responsive.min'); ?>
+	<?php echo $this->Html->css('camera'); ?>
+	<?php echo $this->Html->script('jquery.min.js'); ?>
+	<?php echo $this->Html->script('jquery.easing.1.3.js'); ?>
+	<?php echo $this->Html->script('jquery.mobile.customized.min.js'); ?>
+	<?php echo $this->Html->script('camera.js'); ?>
 
 	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
@@ -48,21 +54,19 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="#"><?php echo __('CakePHP'); ?></a>
+				<a class="brand" href="#"><?php echo __('HolidayMaker'); ?></a>
 				<div class="nav-collapse">
 					<ul class="nav">
-						<li class="active"><a href="#">Home</a></li>
-						<li><a href="#about">About</a></li>
-						<li><a href="#contact">Contact</a></li>
+						<li><a href="#login">Login</a></li>
 					</ul>
-				</div><!--/.nav-collapse -->
+				</div>
 			</div>
 		</div>
 	</div>
 
 	<div class="container">
 
-		<h1>Bootstrap starter template</h1>
+		<!--<h1>Bootstrap starter template</h1>-->
 
 		<?php echo $this->Session->flash(); ?>
 
