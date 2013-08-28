@@ -58,11 +58,11 @@ class AppController extends Controller {
         $user = $facebook->getUser();
         if ($user) {
             try {
+                $user_profile = $facebook->api('/me');
                 return true;
             } catch (FacebookApiException $e) {
                 $user = null;
-                echo "Facebook認証に失敗しました。";
-                exit();
+                return false;
             }
         } else {
             return false;

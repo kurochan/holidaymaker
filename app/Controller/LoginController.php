@@ -3,14 +3,6 @@
 class LoginController extends AppController{
 
 	public function index(){
-        $redirectUrl = $this->Session->read('redirect');
-        $redirectUrl = $redirectUrl ? $redirectUrl : '/';
-        if($this->Session->check('redirect')){
-            $this->Session->delete('redirect');
-            $this->redirect($redirectUrl);
-            return;
-        }
-
         if (self::isFBLoggedIn()) {
             $this->redirect(array('controller' => 'Tops', 'action' => 'index'));
         } else {
