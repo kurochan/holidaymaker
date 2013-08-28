@@ -53,7 +53,7 @@ class AppController extends Controller {
         return self::$facebook;
     }
 
-    public static function isFBLoggedIn() {
+    public function isFBLoggedIn() {
         if($this->Session->read('login')) {
             return true;
         }
