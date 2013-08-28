@@ -1,13 +1,17 @@
 <div class="posts form">
-<?php echo $this->Form->create('Project'); ?>
-  <fieldset>
-    <legend><?php echo __('プランの新規投稿'); ?></legend>
-  <?php
-    echo $this->Form->input('name',array('label' => 'プラン名'));
-    echo $this->Form->input('spot',array('label' => '地域'));
-    echo $this->Form->input('people',array('label' => '人数'));
-    echo $this->Form->input('price',array('label' => '費用'));
-  ?>
-  </fieldset>
-<?php echo $this->Form->end(__('次へ')); ?>
+
+	<legend><?php echo __('プランの登録'); ?></legend>
+
+	<form action="#" method="post">
+ 		プラン名 &nbsp&nbsp <small>例）海辺でバーベキュー！</small><br>
+ 		<input type="text" name="title" /><br>
+ 		場所  &nbsp&nbsp <small>例）</small><br>
+ 		<input type="text" name="area" /><br>
+ 		人数<br>
+ 		<input type="text" name="person" /><br>
+ 		費用<br>
+ 		<input type="text" name="money" /><br>
+ 	<input type="submit" value="登録" />
+	</form>
+
 </div>
