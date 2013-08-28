@@ -13,7 +13,7 @@ class LoginController extends AppController{
             $this->Session->write('login', 'true');
             $this->Session->delete('controller');
             $this->Session->delete('action');
-            $user_init();
+            self::user_init();
             $this->redirect($redirect);
         } else {
             if($this->params['url']['co'] && $this->params['url']['ac']) {
