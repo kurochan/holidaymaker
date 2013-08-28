@@ -51,7 +51,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="#"><?php echo __('HolidayMaker'); ?></a>
+				<a class="brand" href="./"><?php echo __('HolidayMaker'); ?></a>
 				<div class="nav-collapse">
 					<ul class="nav">
 						<li><a href="#login">Login</a></li>
