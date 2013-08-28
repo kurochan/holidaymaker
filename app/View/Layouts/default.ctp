@@ -55,7 +55,7 @@
 				<div class="nav-collapse">
 					<ul class="nav">
                     <?php if($this->Session->read('login')) { ?>
-                    <li><a href="#"><?php $this->Session->read('user_name') ?></a></li>
+                    <li><a href="#"><?php ehco $this->Session->read('user_name') ?>さん</a></li>
                     <?php } else {?>
                     <li><a href="/login?co=<?php echo $this->name ?>$$ac=<?php echo $this->action ?>">Login</a></li>
                     <?php }?>
