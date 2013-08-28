@@ -27,7 +27,7 @@
  */
 	// Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
 	Router::connect('/', array('controller' => 'tops', 'action' => 'index'));
-	Router::connect('/plans/:id', array('controller' => 'plans', 'action' => 'index'));
+	Router::connect('/plans/:id', array('controller' => 'plans', 'action' => 'index'), array('pass' => array('id')));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */
