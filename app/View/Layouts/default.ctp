@@ -54,7 +54,9 @@
 				<a class="brand" href="./"><?php echo __('HolidayMaker'); ?></a>
 				<div class="nav-collapse">
 					<ul class="nav">
+                    <?php if(!$this->Session->read('login')) { ?>
                     <li><a href="/login?co=<?php echo $this->name ?>$$ac=<?php echo $this->action ?>">Login</a></li>
+                    <?php } ?>
 					</ul>
 				</div>
 			</div>
