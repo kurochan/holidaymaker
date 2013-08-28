@@ -13,7 +13,7 @@ class LoginController extends AppController{
             $this->Session->write('login', 'true');
             $this->Session->delete('controller');
             $this->Session->delete('action');
-            $user_check();
+            $user_init();
             $this->redirect($redirect);
         } else {
             if($this->params['url']['co'] && $this->params['url']['ac']) {
@@ -25,13 +25,13 @@ class LoginController extends AppController{
         }
     }
 
-    private function user_check() {
+    private function user_init() {
         $facebook = self::getFacebook();
         $profile = $facebook->api('/me');
-        var_dump($profile);
-        exit();
-        $id = 1;
-        $name = "テスト";
+        $id = $profile['id'];
+        $name = $profile['name'];
+        $this->Session->write('user_id', $id);
+        $this->Session->write('user_name', $name);
         $redis = self::getRedis();
         $status = $redis->sadd('user_id_set', $id);
         $redis->hset('user_'.$id, 'name', $name);
