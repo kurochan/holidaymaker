@@ -20,7 +20,8 @@ class PostsController extends AppController{
             $person = htmlspecialchars($_POST['person']);
             $date = htmlspecialchars($_POST['date']);
             $money = htmlspecialchars($_POST['money']);
-			$redis->hmset('plan_'.$id,'title',$title,'area',$area,'person',$person,'date',$date,'money',$money);
+            $user_id = $this->Session->read('user_id');
+			$redis->hmset('plan_'.$id,'title',$title,'area',$area,'person',$person,'date',$date,'money',$money,'user_id',$user_id);
 
 			$this->Session->setFlash(__('プランを登録しました.'),
 					'alert',
