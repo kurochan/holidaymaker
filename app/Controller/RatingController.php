@@ -10,14 +10,16 @@ class RatingController extends AppController{
     }
 
 	public function post(){
+
         $this->autoRender = false;
-        $id = $this->request->param['id'];
-        $like = $this->request->param['like'];
+        $id = $this->request->named['id'];
+        $like = $this->request->named['like'];
+
         $redis = self::getRedis();
         $plan = $redis->hget('plan_'.$id, 'title');
         $user_id = $this->Session->read('user_id');
         if(!$id || !$plan || !$user_id){
-            echo "invalid parameter";
+            $this->redirect('/login?co='.$this->name.'&ac='.$this->action);
             return;
         }
         if($like == 'true'){
@@ -31,5 +33,6 @@ class RatingController extends AppController{
             }
             echo "unliked";
         }
+        $this->redirect($this->webroot.'plans/'.$id);
     }
 }

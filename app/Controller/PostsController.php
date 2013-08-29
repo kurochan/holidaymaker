@@ -3,10 +3,10 @@
 class PostsController extends AppController{
 
 	public function plan(){
-        /*if(!$this->Session->read('login')){
+        if(!$this->Session->read('login')){
             $this->redirect('/login?co='.$this->name.'&ac='.$this->action);
             return;
-        }*/
+        }
 		
 		$date = date("Y/M/D");
 		
@@ -35,10 +35,10 @@ class PostsController extends AppController{
 	}
 
 	public function action(){
-        /*if(!$this->Session->read('login')){
+        if(!$this->Session->read('login')){
             $this->redirect('/login?co='.$this->name.'&ac='.$this->name);
             return;
-        }*/
+        }
 
 		$plan_id = $this->request->named['plan_id'];
 		$file_path = $this->webroot.'img/spot';
