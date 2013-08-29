@@ -1,12 +1,3 @@
-<div class="row">
-    <div class="span4">
-        <form class="form-search">
-            <input type="text" class="input-medium search-query"  value="キーワードで検索">
-            <button type="submit" class="btn btn-primary">Search</button>
-        </form>
-    </div>
-</div>
-
 <?php echo $this->Html->image('top.png'); ?>
 
 <div class="tabbable"> <!-- Only required for left/right tabs -->
