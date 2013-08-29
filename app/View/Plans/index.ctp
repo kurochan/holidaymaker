@@ -17,8 +17,9 @@
             <?php foreach ($plan as $p){ ?>
                 <td rowspan="3"　width="20%"> <?php echo $p['stime'] .'～' .$p['etime']; ?> </td>
                 <td width="80%"> <div align="center"> <font size="+1"> <strong> <?php echo $p['place']; ?> </strong></font></div> </td> <tr>
-                <td width="80%"> <div align="center"> <?php echo $p['money']; ?> </div> </td> <tr>
-                <td width="80%"> <?php echo $p['text']; ?> </td> <tr> 
+                <td width="80%"> <div align="center"> <?php echo $p['money']; ?> </div></td><tr>
+                <td width="80%"> <?php echo $p['text']; ?> </td><tr> 
+                <td width="80%"> <div align="center"><img src="<?php echo $this->webroot ?>img/spot/<?php echo $p['image'] ?>" /></div></td><tr>
             <?php } ?>
 
         </table> 
@@ -29,9 +30,9 @@
     <div class="span4 offset5">
         <div class="form_action">   
             <?php if($liked == false){ ?>
-            <a href="<?php echo $this->Html->url(array('controller' => 'rating', 'action' => 'post','id' => $plan_id,'like' => 'true',)) ?>" class="btn btn-primary"><i class="icon-pencil icon-white"></i>&nbsp;<?php echo __('いいね！') ?></a>
+            <a href="<?php echo $this->Html->url(array('controller' => 'rating', 'action' => 'post','id' => $plan_id,'like' => 'true',)) ?>" class="btn btn-primary"><i class="icon-thumbs-up icon-white"></i>&nbsp;<?php echo __('いいね！') ?><span class="badge badge-important"><?php echo $liked_number ?></span></a>
             <?php }else{ ?>
-            <button class="btn disabled btn-primary"><i class="icon-pencil icon-white"></i>&nbsp;<?php echo __('いいね！') ?></button>
+            <button class="btn disabled btn-inverse"><i class="icon-thumbs-up icon-white"></i>&nbsp;<?php echo __('いいね！') ?><span class="badge badge-important"><?php echo $liked_number ?></span></button>
             <?php } ?>
 
         </div>

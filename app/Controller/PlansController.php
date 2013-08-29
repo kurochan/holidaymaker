@@ -8,7 +8,7 @@ class PlansController extends AppController{
         }
 
         $redis = self::getRedis();
-        $plan = $redis->hmget('plan_'.$id, 'title', 'area', 'person', 'date', 'money');
+        $plan = $redis->hmget('plan_'.$id, 'title', 'area', 'person', 'date', 'money','image');
         if(!$plan || !$plan[0]) {
             $this->redirect(array('controller' => 'Tops', 'action' => 'index'));
             return;
@@ -25,6 +25,7 @@ class PlansController extends AppController{
         $this->set('person', $plan[2]);
         $this->set('date', $plan[3]);
         $this->set('money', $plan[4]);
+        $this->set('image', $plan[5]);
         $this->set('plan', $actions);
         $this->set('plan_id',$id);
         $this->set('liked', self::liked($id));
