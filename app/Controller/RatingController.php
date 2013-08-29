@@ -22,9 +22,11 @@ class RatingController extends AppController{
         }
         if($like == 'true'){
             $redis->sadd('plan_'.$id.'_liked', $user_id);
+            $redis->zincrby('plan_scores', 1, $id);
             echo "liked";
         }else{
             $redis->srem('plan_'.$id.'_liked', $user_id);
+            $redis->zincrby('plan_scores', -1, $id);
             echo "unliked";
         }
     }
