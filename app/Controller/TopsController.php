@@ -8,7 +8,7 @@ class TopsController extends AppController{
 
     private function getNew(){
         $redis = self::getRedis();
-        $plan_id_list = $redis->lrange('plan_id_list', -3, -1);
+        $plan_id_list = $redis->lrange('plan_id_list', -6, -1);
         $plans = array();
         foreach($plan_id_list as $plan_id){
             $plan = $redis->hgetall('plan_'.$plan_id); 
