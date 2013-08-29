@@ -18,8 +18,11 @@
                 <td rowspan="3"　width="20%"> <?php echo $p['stime'] .'～' .$p['etime']; ?> </td>
                 <td width="80%"> <div align="center"> <font size="+1"> <strong> <?php echo $p['place']; ?> </strong></font></div> </td> <tr>
                 <td width="80%"> <div align="center"> <?php echo $p['money']; ?> </div></td><tr>
-                <td width="80%"> <?php echo $p['text']; ?> </td><tr> 
+                <td width="80%"> <?php echo $p['text']; ?> </td><tr>
+                <?php if(!empty($p['image'])){ ?>
                 <td width="80%"> <div align="center"><img src="<?php echo $this->webroot ?>img/spot/<?php echo $p['image'] ?>" /></div></td><tr>
+                <?php }?>
+
             <?php } ?>
 
         </table> 
