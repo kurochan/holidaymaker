@@ -23,7 +23,7 @@
 <br><br><br><br>
 
 <?php //件数が多いときは次のページへの遷移ボタンのための表示属性が設定される
-$hidden = 'style="visibility:hidden"';$plans[$i]['id']; exit();
+$hidden = 'style="visibility:hidden"';echo $plans[$i]['id']; exit();
 ?>
 
 <div class="row">
