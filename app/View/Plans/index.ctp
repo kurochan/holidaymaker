@@ -1,8 +1,3 @@
-<script>
-$(function(){
-    $('#star').raty({path: "<?php echo $this->webroot; ?>img", cancel: true, cancelPlace: 'right', scoreName: 'entity[score]'});
-});
-</script>
 <h1> <?php echo $title ?> </h1> <br>
 
     <div class="row">
@@ -15,8 +10,6 @@ $(function(){
 
 <br><br><br><br>
 
-
-    <div id="star" data-score="1"></div>
 <div class="row">
     <div class="span9 offset1">
         <table class="table table-bordered">
