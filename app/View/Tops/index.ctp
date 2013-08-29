@@ -1,6 +1,17 @@
+<div class="row">
+    <div class="span1">
+    </div>
+    <div class="span10">
+        <?php echo $this->Html->image('top.png'); ?>
+    </div>
+    <div class="span1">
+    </div>
+</div>
 
-<?php echo $this->Html->image('top.png'); ?>
-
+<div class="row">
+<div class="span2">
+</div>
+<div class="span8">
 <div class="tabbable"> <!-- Only required for left/right tabs -->
   <ul class="nav nav-tabs">
     <li class="active"><a href="#tab1" data-toggle="tab">新着プラン</a></li>
@@ -30,7 +41,9 @@
     </tbody>
     </table>
     </div>
-
   </div>
-
+</div>
+</div>
+<div class="span2">
+</div>
 </div>
