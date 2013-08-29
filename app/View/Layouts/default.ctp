@@ -51,7 +51,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="./"><?php echo __('HolidayMaker'); ?></a>
+				<a class="brand" href="<?php echo $this->webroot ?>"><?php echo __('HolidayMaker'); ?></a>
 				<div class="nav-collapse">
 					<ul class="nav">
 					<li<?php echo $this->name === 'Posts' ? ' class="active"' : '' ?>><a href="<?php echo $this->Html->url(array('controller' => 'Posts', 'action' => 'plan')) ?>"><i class="icon-pencil icon-black"></i>&nbsp;<?php echo __('プラン投稿') ?></a></li>
@@ -69,8 +69,8 @@
 					</li>-->
 					</ul>
 
-					<form action = "./searchs" class="navbar-form pull-right" method="post">
-						<input type="text" name="sword" value="スポット名で検索" onfocus="if (this.value == 'スポット名で検索') { this.value='' }" onblur="if (this.value == '') { this.value='スポット名で検索' }" />
+					<form action = "<?php echo $this->webroot ?>searchs" class="navbar-form pull-right" method="post">
+						<input type="text" name="sword" value="キーワードで検索" onfocus="if (this.value == 'キーワードで検索') { this.value='' }" onblur="if (this.value == '') { this.value='キーワードで検索' }" />
             			<button type="submit" class="btn btn-primary">Search</button>
         			</form>
 				</div>
