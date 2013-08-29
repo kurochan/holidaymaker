@@ -28,7 +28,7 @@ class PlansController extends AppController{
         $this->set('plan', $actions);
         $this->set('plan_id',$id);
         $this->set('liked', self::liked($id));
-        $tihs->set('liked_number', $redis->scard('plan_'.$id.'_liked');
+        $this->set('liked_number', $redis->scard('plan_'.$id.'_liked');
     }
 
     private function liked($id){
