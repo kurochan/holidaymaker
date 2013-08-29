@@ -19,7 +19,7 @@ class RatingController extends AppController{
         $plan = $redis->hget('plan_'.$id, 'title');
         $user_id = $this->Session->read('user_id');
         if(!$id || !$plan || !$user_id){
-            $this->redirect('/login?co='.$this->name.'&ac='.$this->action);
+            $this->redirect($this->webroot.'login');
             return;
         }
         if($like == 'true'){
