@@ -88,6 +88,12 @@
 
 	</div> <!-- /container -->
 
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">このWebアプリは<a href="http://niftyjinji.cocolog-nifty.com/blog/2013/06/2013-9ae1.html">ニフティ2013夏のインターン</a>で開発されました。</p>
+      </div>
+    </div>
+
 	<!-- Le javascript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
