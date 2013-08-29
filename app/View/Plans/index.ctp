@@ -27,8 +27,13 @@
 
 <div class="row">
     <div class="span4 offset5">
-        <div class="form_action">
+        <div class="form_action">   
+            <?php if($liked == false){ ?>
             <a href="<?php echo $this->Html->url(array('controller' => 'rating', 'action' => 'post','id' => $plan_id,'like' => 'true',)) ?>" class="btn btn-primary"><i class="icon-pencil icon-white"></i>&nbsp;<?php echo __('いいね！') ?></a>
+            <?php }else{ ?>
+            <button class="btn disabled btn-primary"><i class="icon-pencil icon-white"></i>&nbsp;<?php echo __('いいね！') ?></button>
+            <?php } ?>
+
         </div>
     </div>
 </div>

@@ -32,7 +32,7 @@ class PlansController extends AppController{
 
     private function liked($id){
         if(!$this->Session->read('login')){
-            return false;    
+            return false;
         }
         $user_id = $this->Session->read('user_id');
         $redis = self::getRedis();
