@@ -5,6 +5,10 @@ class PostsController extends AppController{
 	//public $uses = array('Post');
 
 	public function plan(){
+        if(!$this->Session->read('login')){
+            // $TODO URLパラメータの設定
+            // $this->redirect(array('controller' => 'login', 'action' => 'index', 'co' => $this->name, 'ac' => $this->action));
+        }
 
 		$date = date("Y/M/D");
 		
@@ -13,7 +17,12 @@ class PostsController extends AppController{
 			$redis = self::getRedis();
 			$id = $redis->lindex('plan_id_list',-1)+1;
 			$redis->rpush('plan_id_list',$id);
-			$redis->hmset('plan_'.$id,'title',$_POST['title'],'area',$_POST['area'],'person',$_POST['person'],'date',$date,'money',$_POST['money']);
+            $title = htmlspecialchars($_POST['title']);
+            $area = htmlspecialchars($_POST['area']);
+            $person = htmlspecialchars($_POST['person']);
+            $date = htmlspecialchars($_POST['date']);
+            $money = htmlspecialchars($_POST['money']);
+			$redis->hmset('plan_'.$id,'title',$title,'area',$area,'person',$person,'date',$date,'money',$money);
 
 			$this->Session->setFlash(__('プランを登録しました.'),
 					'alert',
@@ -36,8 +45,13 @@ class PostsController extends AppController{
 
 				$redis = self::getRedis();
 				$id = $redis->lindex('action_id_list',-1)+1;
+                $place = htmlspecialchars($_POST['place']);
+                $text = htmlspecialchars($_POST['text']);
+                $money = htmlspecialchars($_POST['money']);
+                $stime = htmlspecialchars($_POST['stime']);
+                $etime = htmlspecialchars($_POST['etime']);
 				$redis->rpush('action_id_list',$id);
-				$redis->hmset('action_'.$id,'plan_id',$plan_id,'place',$_POST['place'],'text',$_POST['text'],'money',$_POST['money'],'stime',$_POST['stime'],'etime',$_POST['etime']);
+				$redis->hmset('action_'.$id,'plan_id',$plan_id,'place',$place,'text',$text,'money',$money,'stime',$stime,'etime',$etime);
 				$redis->rpush('plan_'.$plan_id.'_list',$id);
 
 				$this->Session->setFlash(__('行動プランを登録しました.'),
