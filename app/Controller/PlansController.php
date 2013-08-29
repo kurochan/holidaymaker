@@ -33,7 +33,8 @@ class PlansController extends AppController{
         if(!$this->Session->read('login')){
             return false;    
         }
+        $user_id = $this->Session->read('user_id');
         $redis = self::getRedis();
-        return $redis->sismember('plan_'.$id.'_liked', $id) ? true : false;
+        return $redis->sismember('plan_'.$id.'_liked', $user_id) ? true : false;
     }
 }
