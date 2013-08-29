@@ -23,9 +23,9 @@
         <tr><th>場所</th><th>プラン名</th><th>投稿者</th></tr>
     </thead>
     <tbody>
-        <tr><td>データ１－１</td><td>データ１－２</td><td>データ１－３</td></tr>
-        <tr><td>データ２－１</td><td>データ２－２</td><td>データ２－３</td></tr>
-        <tr><td>データ３－１</td><td>データ３－２</td><td>データ３－３</td></tr>
+        <?php foreach($new_plans as $plan){ ?>
+        <tr><td><?php echo $plan['area'] ?></td><td><?php echo $plan['title'] ?></td><td><?php echo $plan['user_name'] ?></td></tr>
+        <?php } ?>
     </tbody>
     </table>
     </div>
