@@ -54,12 +54,25 @@
 				<a class="brand" href="./"><?php echo __('HolidayMaker'); ?></a>
 				<div class="nav-collapse">
 					<ul class="nav">
-                    <?php if($this->Session->read('login')) { ?>
+					<li<?php echo $this->name === 'Posts' ? ' class="active"' : '' ?>><a href="<?php echo $this->Html->url(array('controller' => 'Posts', 'action' => 'plan')) ?>"><i class="icon-pencil icon-black"></i>&nbsp;<?php echo __('プラン投稿') ?></a></li>
+					<!--<li><?php if($this->Session->read('login')) { ?>
+						<li<?php echo $this->name === 'Logins' ? ' class="active"' : '' ?>><a href="#"><i class="icon-user icon-black"></i>&nbsp;<?php echo $this->Session->read('user_name') ?>さん</a></li>
+						 <?php } else {?>
+						<li<?php echo $this->name === 'Logins' ? ' class="active"' : '' ?>><a href="/login?co=<?php echo $this->name ?>$$ac=<?php echo $this->action ?>"><i class="icon-home icon-black"></i>&nbsp;<?php echo __('ログイン') ?></a></li>
+						<?php }?>
+					</li>-->
+					<li><?php if($this->Session->read('login')) { ?>
                     <li><a href="#"><?php echo $this->Session->read('user_name') ?>さん</a></li>
                     <?php } else {?>
                     <li><a href="/login?co=<?php echo $this->name ?>$$ac=<?php echo $this->action ?>">Login</a></li>
                     <?php }?>
+					</li>
 					</ul>
+
+					<form action = "./searchs" class="navbar-form pull-right" method="post">
+						<input type="text" name="sword" value="スポット名で検索" onfocus="if (this.value == 'スポット名で検索') { this.value='' }" onblur="if (this.value == '') { this.value='スポット名で検索' }" />
+            			<button type="submit" class="btn btn-primary">Search</button>
+        			</form>
 				</div>
 			</div>
 		</div>

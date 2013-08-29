@@ -4,7 +4,8 @@ App::uses("Sanitize", "Utility");
 class SearchsController extends AppController{
     public function index(){
 
-        $sword = $this->params['url']['sword'];//検索ワード(エリア)獲得
+        $sword = htmlspecialchars($_POST['sword']);
+        //$sword = $this->params['url']['sword'];//検索ワード(エリア)獲得
         $sword = Sanitize::stripAll($sword);
 
         $redis = self::getRedis();
