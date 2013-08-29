@@ -29,8 +29,8 @@ $hidden = 'style="visibility:hidden"';
 <div class="row">
     <div class="span9 offset1">            
             <?php for ($i = 0; $i < count($plans); $i++){ ?>
-            <a href="<?php echo $plans[$i]['link']; ?>" target="_self"> <!--plans[$i]の詳細情報ページへのリンクが欲しい-->
-                <table class="table table-bordered">
+            <a href="<?php echo 'http://ciassff-abq-app000.c4sa.net/Plans/index/'.$plans[$i]['id']; ?>" target="_self"> <!--plans[$i]の詳細情報ページへのリンクが欲しい-->
+                <table class="table table-bordered" border="4" bgcolor="black">
                     <td width="100%"> <font size="+3" color="black"> <strong> <?php echo $plans[$i]['title']; ?> </strong></font></div> <br><br><br>
                     <div align="center" class="span1 badge badge-info"> <font size="+1"> <strong> <?php echo $plans[$i]['area']; ?> </strong> </font> </div>
                     <div align="center" class="span1 badge badge-success"> <font size="+1"> <strong> <?php echo $plans[$i]['person']; ?> </strong> </font> </div>
@@ -41,11 +41,11 @@ $hidden = 'style="visibility:hidden"';
             </a>
 			<?php
             array_shift($plans);
-			if($i+1 >= 10){//10このプランを1ページに表示
+			/*if($i+1 >= 10){//10このプランを1ページに表示
 			//planの数が10件より多いときは次のページへの遷移ボタンのための表示属性が設定される
 			$hidden = 'style="visibility:visible"';
 			break;
-			}
+			}*/
             } ?>       
     </div>
  </div>
