@@ -1,3 +1,12 @@
+<div class="row">
+    <div class="span4">
+        <form class="form-search">
+            <input type="text" class="input-medium search-query"  value="キーワードで検索">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+</div>
+
 <?php echo $this->Html->image('top.png'); ?>
 
 <div class="tabbable"> <!-- Only required for left/right tabs -->
@@ -11,11 +20,11 @@
     <div class="tab-pane active" id="tab1">
     <table class="table table-bordered table-condensed">
     <thead>
-        <tr><th>場所</th><th>プラン名</th><th>投稿者</th></tr>
+        <tr style="background-color:#f89406"><th>プラン名</th><th>場所</th><th>投稿者</th></tr>
     </thead>
     <tbody>
         <?php foreach($new_plans as $plan){ ?>
-        <tr><td><?php echo $plan['area'] ?></td><td><?php echo $plan['title'] ?></td><td><?php echo $plan['user_name'] ?></td></tr>
+        <tr><td><a href="http://ciassff-abq-app000.c4sa.net/Plans/index/<?php echo $plan['id']; ?>" target="_self"><?php echo $plan['title'] ?> </a></td><td><?php echo $plan['area'] ?></td><td><?php echo $plan['user_name'] ?></td></tr>
         <?php } ?>
     </tbody>
     </table>
@@ -37,7 +46,7 @@
     <div class="tab-pane" id="tab3">
     <table class="table table-bordered table-condensed">
     <thead>
-        <tr><th>投稿者名</th><th>レピュー</th></tr>
+        <tr style="background-color:#f89406"><th>投稿者名</th><th>レピュー</th></tr>
     </thead>
     <tbody>
         <tr><td>データ１－１</td><td>データ１－２</td></tr>
