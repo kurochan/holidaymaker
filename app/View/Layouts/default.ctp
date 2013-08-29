@@ -69,9 +69,9 @@
 					</li>
 					</ul>
 
-					<form class="navbar-form pull-right">
-            			<input type="text" class="input-medium search-query"  value="キーワードで検索">
-            			<button type="submit" class="btn-small btn-primary">Search</button>
+					<form action = "./searchs" class="navbar-form pull-right" method="post">
+						<input type="text" name="sword" value="スポット名で検索" onfocus="if (this.value == 'スポット名で検索') { this.value='' }" onblur="if (this.value == '') { this.value='スポット名で検索' }" />
+            			<button type="submit" class="btn btn-primary">Search</button>
         			</form>
 				</div>
 			</div>
