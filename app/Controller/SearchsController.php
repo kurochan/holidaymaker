@@ -19,7 +19,7 @@ class SearchsController extends AppController{
                 continue;
             }
             $array = $redis->hgetall('plan_'.$plan_id);
-            $searchd_plans['id'] = $plan_id;
+            $array['id'] = $plan_id;
             array_push($searchd_plans, $array);
         }
 

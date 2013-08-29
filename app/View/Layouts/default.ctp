@@ -93,6 +93,7 @@
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 	<?php echo $this->Html->script('bootstrap.min'); ?>
+	<?php echo $this->Html->script('jquery.raty.min'); ?>
 	<?php echo $this->fetch('script'); ?>
 
 </body>

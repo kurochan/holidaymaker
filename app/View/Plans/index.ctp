@@ -1,4 +1,9 @@
-    <h1> <?php echo $title ?> </h1> <br>
+<script>
+$(function(){
+    $('#star').raty({path: "<?php echo $this->webroot; ?>img", cancel: true, cancelPlace: 'right', scoreName: 'entity[score]'});
+});
+</script>
+<h1> <?php echo $title ?> </h1> <br>
 
     <div class="row">
         <div class="span4 offset6">
@@ -11,25 +16,26 @@
 <br><br><br><br>
 
 
+    <div id="star" data-score="1"></div>
 <div class="row">
     <div class="span9 offset1">
         <table class="table table-bordered">
-            
+
             <?php foreach ($plan as $p){ ?>
                 <td rowspan="3"　width="20%"> <?php echo $p['stime'] .'～' .$p['etime']; ?> </td>
-		        <td width="80%"> <div align="center"> <font size="+1"> <strong> <?php echo $p['place']; ?> </strong></font></div> </td> <tr>
+                <td width="80%"> <div align="center"> <font size="+1"> <strong> <?php echo $p['place']; ?> </strong></font></div> </td> <tr>
                 <td width="80%"> <div align="center"> <?php echo $p['money']; ?> </div> </td> <tr>
                 <td width="80%"> <?php echo $p['text']; ?> </td> <tr> 
             <?php } ?>
-            
+
         </table> 
     </div>
  </div>
 
 <div class="row">
     <div class="span4 offset5">
-	    <div class="form_action">
+        <div class="form_action">
             <button type="submit" class="btn btn-primary">このプランをトレースする</button>
-		</div>
-	</div>
+        </div>
+    </div>
 </div>
