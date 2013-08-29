@@ -2,12 +2,10 @@
 
 class PostsController extends AppController{
 
-	//public $uses = array('Post');
-
 	public function plan(){
         if(!$this->Session->read('login')){
-            // $TODO URLパラメータの設定
-            // $this->redirect(array('controller' => 'login', 'action' => 'index', 'co' => $this->name, 'ac' => $this->action));
+            $this->redirect('/login?co='.$this->name.'&ac='.$this->action);
+            return;
         }
 
 		$date = date("Y/M/D");
@@ -36,6 +34,10 @@ class PostsController extends AppController{
 	}
 
 	public function action(){
+        if(!$this->Session->read('login')){
+            $this->redirect('/login?co='.$this->name.'&ac='.$this->name);
+            return;
+        }
 
 		$plan_id = $this->request->named['plan_id'];
 		
