@@ -1,6 +1,6 @@
 <script>
 $(function(){
-    $('#star').raty({path: '../img', cancel: true, cancelPlace: 'right', scoreName: 'entity[score]'});
+    $('#star').raty({path: "<?php echo $this->webroot; ?>img", cancel: true, cancelPlace: 'right', scoreName: 'entity[score]'});
 });
 </script>
 <h1> <?php echo $title ?> </h1> <br>
