@@ -29,9 +29,9 @@
     <div class="span4 offset5">
         <div class="form_action">   
             <?php if($liked == false){ ?>
-            <a href="<?php echo $this->Html->url(array('controller' => 'rating', 'action' => 'post','id' => $plan_id,'like' => 'true',)) ?>" class="btn btn-primary"><i class="icon-pencil icon-white"></i>&nbsp;<?php echo __('いいね！') ?></a>
+            <a href="<?php echo $this->Html->url(array('controller' => 'rating', 'action' => 'post','id' => $plan_id,'like' => 'true',)) ?>" class="btn btn-primary"><i class="icon-thumbs-up icon-white"></i>&nbsp;<?php echo __('いいね！') ?><span class="badge badge-important"><?php echo $liked_number ?></span></a>
             <?php }else{ ?>
-            <button class="btn disabled btn-primary"><i class="icon-pencil icon-white"></i>&nbsp;<?php echo __('いいね！') ?></button>
+            <button class="btn disabled btn-inverse"><i class="icon-thumbs-up icon-white"></i>&nbsp;<?php echo __('いいね！') ?><span class="badge badge-important"><?php echo $liked_number ?></span></button>
             <?php } ?>
 
         </div>
