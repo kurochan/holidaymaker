@@ -26,7 +26,7 @@
     </thead>
     <tbody>
         <?php foreach($new_plans as $plan){ ?>
-        <tr><td><a href="http://ciassff-abq-app000.c4sa.net/Plans/index/<?php echo $plan['id']; ?>" target="_self"><?php echo $plan['title'] ?> </a></td><td><?php echo $plan['area'] ?></td><td><?php echo $plan['user_name'] ?></td></tr>
+        <tr><td><a href="<?php echo $this->webroot ?>Plans/index/<?php echo $plan['id']; ?>" target="_self"><?php echo $plan['title'] ?> </a></td><td><?php echo $plan['area'] ?></td><td><?php echo $plan['user_name'] ?></td></tr>
         <?php } ?>
     </tbody>
     </table>

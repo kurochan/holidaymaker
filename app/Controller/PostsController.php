@@ -58,10 +58,12 @@ class PostsController extends AppController{
                 $url = htmlspecialchars($_POST['url']);
                 $picture1 =  $_FILES["picture1"]["name"];
 
+                if(!empty($picture1)){
                 //拡張子チェック
                 $extension = pathinfo($picture1, PATHINFO_EXTENSION);
-                if($extension == "jpg" or $extension == "jpeg" or $extension == "gif" or $extension == "png") {
-                switch($extension){
+                if($extension == "jpg" or $extension == "jpeg" or $extension == "gif" or $extension == "png"){
+                
+                	switch($extension){
                 	case "jpg":
                 		$pic = move_uploaded_file($_FILES["picture1"]["tmp_name"], WWW_ROOT.'img/spot/action_'.$id.'.jpg');
                 		break;
@@ -74,33 +76,49 @@ class PostsController extends AppController{
                 	case "jpeg":
                 		$pic = move_uploaded_file($_FILES["picture1"]["tmp_name"], WWW_ROOT.'img/spot/action_'.$id.'.jpeg');
                 		break;
-                }
-				$redis->rpush('action_id_list',$id);
-				$redis->hmset('action_'.$id,'plan_id',$plan_id,'place',$place,'text',$text,'money',$money,'stime',$stime,'etime',$etime,'url',$url,'image','action_'.$id.'.'.$extension);
-				$redis->rpush('plan_'.$plan_id.'_list',$id);
+                	}
 
-				$this->Session->setFlash(__('行動プランを登録しました.'),
+                	$redis->rpush('action_id_list',$id);
+					$redis->hmset('action_'.$id,'plan_id',$plan_id,'place',$place,'text',$text,'money',$money,'stime',$stime,'etime',$etime,'url',$url,'image','action_'.$id.'.'.$extension);
+					$redis->rpush('plan_'.$plan_id.'_list',$id);
+
+					$this->Session->setFlash(__('行動プランを登録しました.'),
 						'alert',
 						array(
 							'plugin' => 'TwitterBootstrap',
 							'class' => 'alert-success'
 						)
-				);
-				$this->redirect(array('controller' => 'posts', 'action' => 'action', 'plan_id' => $plan_id));
-
+					);
+					$this->redirect(array('controller' => 'posts', 'action' => 'action', 'plan_id' => $plan_id));
 				}else{
+
 					$this->Session->setFlash(__('画像の拡張子を確認してください.'),
 						'alert',
 						array(
 							'plugin' => 'TwitterBootstrap',
 							'class' => 'alert-error'
 						)
-				);
-				$this->redirect(array('controller' => 'posts', 'action' => 'action', 'plan_id' => $plan_id));
+					);
+					$this->redirect(array('controller' => 'posts', 'action' => 'action', 'plan_id' => $plan_id));
+            	}
+            	}else{
+	            	$redis->rpush('action_id_list',$id);
+					$redis->hmset('action_'.$id,'plan_id',$plan_id,'place',$place,'text',$text,'money',$money,'stime',$stime,'etime',$etime,'url',$url);
+					$redis->rpush('plan_'.$plan_id.'_list',$id);
+
+					$this->Session->setFlash(__('行動プランを登録しました.'),
+						'alert',
+						array(
+							'plugin' => 'TwitterBootstrap',
+							'class' => 'alert-success'
+						)
+					);
+					$this->redirect(array('controller' => 'posts', 'action' => 'action', 'plan_id' => $plan_id));
 				}
-			}
+
+				
 		}
-		else
+		/*else
 		{
 
 			$this->Session->setFlash(__('まずはプランをしてください.'),
@@ -111,8 +129,7 @@ class PostsController extends AppController{
 					)
 			);
 			$this->redirect(array('controller' => 'posts', 'action' => 'plan'));
-		}
+		}*/
 	}
-
 }
-
+}

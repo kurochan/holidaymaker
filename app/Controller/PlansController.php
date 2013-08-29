@@ -26,15 +26,17 @@ class PlansController extends AppController{
         $this->set('date', $plan[3]);
         $this->set('money', $plan[4]);
         $this->set('plan', $actions);
+        $this->set('plan_id',$id);
         $this->set('liked', self::liked($id));
     }
 
     private function liked($id){
         if(!$this->Session->read('login')){
-            return false;    
+            return false;
         }
         $user_id = $this->Session->read('user_id');
         $redis = self::getRedis();
         return $redis->sismember('plan_'.$id.'_liked', $user_id) ? true : false;
     }
+
 }
