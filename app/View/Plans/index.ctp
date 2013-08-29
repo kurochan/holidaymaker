@@ -28,7 +28,7 @@
 <div class="row">
     <div class="span4 offset5">
         <div class="form_action">
-            <button type="submit" class="btn btn-primary">このプランをトレースする</button>
+            <a href="<?php echo $this->Html->url(array('controller' => 'rating', 'action' => 'post','id' => $plan_id,'like' => 'true',)) ?>" class="btn btn-primary"><i class="icon-pencil icon-white"></i>&nbsp;<?php echo __('いいね！') ?></a>
         </div>
     </div>
 </div>

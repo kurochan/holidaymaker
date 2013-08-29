@@ -11,8 +11,8 @@ class RatingController extends AppController{
 
 	public function post(){
         $this->autoRender = false;
-        $id = $this->params['url']['id'];
-        $like = $this->params['url']['like'];
+        $id = $this->request->param['id'];
+        $like = $this->request->param['like'];
         $redis = self::getRedis();
         $plan = $redis->hget('plan_'.$id, 'title');
         $user_id = $this->Session->read('user_id');

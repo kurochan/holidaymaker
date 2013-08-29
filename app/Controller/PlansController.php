@@ -26,5 +26,7 @@ class PlansController extends AppController{
         $this->set('date', $plan[3]);
         $this->set('money', $plan[4]);
         $this->set('plan', $actions);
+        $this->set('plan_id',$id);
     }
+
 }
