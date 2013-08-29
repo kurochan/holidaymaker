@@ -29,9 +29,9 @@ $hidden = 'style="visibility:hidden"';
 <div class="row">
     <div class="span9 offset1">            
             <?php for ($i = 0; $i < count($plans); $i++){ ?>
-            <a href="<?php echo 'http://ciassff-abq-app000.c4sa.net/Plans/index/'.$plans[$i]['id']; ?>" target="_self"> <!--plans[$i]の詳細情報ページへのリンクが欲しい-->
-                <table style="border:1px solid gray;background-color:ivory;" class="table table-bordered" width="100%">
-                    <td><br><font size="+4" color="black" style="FONT-WEIGHT:EXTRA-LIGHT;FONT-STYLE:ITALIC;"><?php echo $plans[$i]['title']; ?></font><br><br><tr>
+            <a href="<?php echo $this->webroot.'Plans/index/'.$plans[$i]['id']; ?>" target="_self"> <!--plans[$i]の詳細情報ページへのリンクが欲しい-->
+                <table style="border:1px solid gray;" class="table table-bordered" width="100%">
+                    <td background="<?php echo $this->webroot ?>img/s_gradation5.gif"><br><font size="+4" color="black" style="FONT-WEIGHT:EXTRA-LIGHT;FONT-STYLE:ITALIC;"><?php echo $plans[$i]['title']; ?></font><br><br><tr>
                     <td><div class="pull-right"><div align="center" class="span1 badge badge-info"> <font size="+1"> <strong> <?php echo $plans[$i]['area']; ?> </strong> </font> </div>
                     <div align="center" class="span1 badge badge-success"> <font size="+1"> <strong> <?php echo $plans[$i]['person']; ?> </strong> </font> </div>
                     <div align="center" class="span1 badge badge-warning"> <font size="+1"> <strong> <?php echo $plans[$i]['money']; ?> </strong> </font> </div>
