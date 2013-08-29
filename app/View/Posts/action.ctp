@@ -15,6 +15,8 @@
  		<input type="text" name="stime" /><br>
  		終了時間&nbsp&nbsp<small>午後11時30分なら"23:30"と入力</small><br>
  		<input type="text" name="etime" /><br>
+    参考URL&nbsp&nbsp<small>行動プラント関係するURLを入力してください</small><br>
+    <input type="text" name="place" /><br>
     関連写真<br>
     <input type="file" name="picture1" size="30" /><br />
     <small>※jpg,jpeg,png,gif形式のみ対応しています</small><br>

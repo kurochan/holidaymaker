@@ -18,7 +18,6 @@ class PostsController extends AppController{
             $title = htmlspecialchars($_POST['title']);
             $area = htmlspecialchars($_POST['area']);
             $person = htmlspecialchars($_POST['person']);
-            //$date = htmlspecialchars($_POST['date']);
             $money = htmlspecialchars($_POST['money']);
             $user_id = $this->Session->read('user_id');
 			$redis->hmset('plan_'.$id,'title',$title,'area',$area,'person',$person,'date',$date,'money',$money,'user_id',$user_id);
@@ -55,6 +54,7 @@ class PostsController extends AppController{
                 $money = htmlspecialchars($_POST['money']);
                 $stime = htmlspecialchars($_POST['stime']);
                 $etime = htmlspecialchars($_POST['etime']);
+                $url = htmlspecialchars($_POST['url']);
                 $picture1 =  $_FILES["picture1"]["name"];
 
                 //拡張子チェック
@@ -75,7 +75,7 @@ class PostsController extends AppController{
                 		break;
                 }
 				$redis->rpush('action_id_list',$id);
-				$redis->hmset('action_'.$id,'plan_id',$plan_id,'place',$place,'text',$text,'money',$money,'stime',$stime,'etime',$etime,'image','action_'.$id.'.'.$extension);
+				$redis->hmset('action_'.$id,'plan_id',$plan_id,'place',$place,'text',$text,'money',$money,'stime',$stime,'etime',$etime,'url',$url,'image','action_'.$id.'.'.$extension);
 				$redis->rpush('plan_'.$plan_id.'_list',$id);
 
 				$this->Session->setFlash(__('行動プランを登録しました.'),
