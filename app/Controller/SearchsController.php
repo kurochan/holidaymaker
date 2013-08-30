@@ -15,7 +15,7 @@ class SearchsController extends AppController{
         foreach($plan_id_list as $plan_id){
             $area = $redis->hget('plan_'.$plan_id, 'area');
             $title = $redis->hget('plan_'.$plan_id, 'title');
-            if(!strstr($sword, $area) && !strstr($sword, $title)){
+            if(!strstr($area, $sword) && !strstr($title, $sword)){
                 continue;
             }
             $array = $redis->hgetall('plan_'.$plan_id);
