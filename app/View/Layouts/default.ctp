@@ -93,8 +93,8 @@
       <div class="container">
     			<center>
 				<br>
-      			<br>Copyright © <a href="http://niftyjinji.cocolog-nifty.com/blog/2013/06/2013-9ae1.html"> NIFTY SUMMER INTERNSHIP 2013</a> TEAM KABOOM All Rights Reserved.<br></center>
-				<center>Powered by<a href="http://honttoni.blog74.fc2.com/blog-entry-67.html" target="_blank"> NIFTY Cloud C4SA</a></center>
+      			<br>Copyright © <a href="http://niftyjinji.cocolog-nifty.com/blog/2013/06/2013-9ae1.html" target="_blank"> NIFTY SUMMER INTERNSHIP 2013</a> TEAM KABOOM All Rights Reserved.<br></center>
+				<center>Powered by<a href="http://c4sa.nifty.com/" target="_blank"> NIFTY Cloud C4SA</a></center>
 	  </div>
     </div>
 
