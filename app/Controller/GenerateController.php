@@ -20,7 +20,7 @@ class GenerateController extends AppController{
             'まったりデート',
             'わいわいプラン',
         );
-        $title = $titles[rand(count($titles)) - 1];
+        $title = $titles[0, rand(count($titles)) - 1];
         $area = "???";
         $person = rand(1, 5);
         $money =2500;
