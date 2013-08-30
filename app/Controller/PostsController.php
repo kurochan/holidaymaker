@@ -13,7 +13,7 @@ class PostsController extends AppController{
 		if($this->request->isPost() || $this->request->isPut()){
 
 			$redis = self::getRedis();
-			$id = $redis->lindex('plan_id_list',-1)+1;
+            $id = max($redis->lindex('plan_id_list',-1), $redis->lindex('generated_plan_id_list',-1)) + 1;
 			$redis->rpush('plan_id_list',$id);
             $title = htmlspecialchars($_POST['title']);
             $area = htmlspecialchars($_POST['area']);
