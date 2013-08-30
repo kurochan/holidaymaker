@@ -2,7 +2,7 @@
     <div class="span1">
     </div>
     <div class="span10">
-        <?php echo $this->Html->image('top.png'); ?>
+        <?php echo $this->Html->image('top.jpg'); ?>
     </div>
     <div class="span1">
     </div>
