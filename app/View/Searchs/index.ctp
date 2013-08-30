@@ -46,7 +46,6 @@ $hidden = 'style="visibility:hidden"';
                 <br>
             </a>
 			<?php
-            array_shift($plans);
 			/*if($i+1 >= 10){//10このプランを1ページに表示
 			//planの数が10件より多いときは次のページへの遷移ボタンのための表示属性が設定される
 			$hidden = 'style="visibility:visible"';
