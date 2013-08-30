@@ -90,7 +90,8 @@
 
     <div id="footer">
       <div class="container">
-        <p class="muted credit">このWebアプリは<a href="http://niftyjinji.cocolog-nifty.com/blog/2013/06/2013-9ae1.html">ニフティ2013夏のインターン</a>で開発されました。</p>
+        <p class="muted credit">このWebアプリは<a href="http://niftyjinji.cocolog-nifty.com/blog/2013/06/2013-9ae1.html">ニフティ インターンシップ 夏の勉強会2013</a>で開発されました。</p>
+        <p class="muted credit">Powered by<?php echo $this->Html->image('logo_c4sa.gif'); ?></p>
       </div>
     </div>
 
