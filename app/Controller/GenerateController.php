@@ -23,7 +23,7 @@ class GenerateController extends AppController{
 
         $len = $redis->llen('action_id_list');
         for ($i = 0; $i < rand(1, 4); $i++) {
-            $redis->rpush('plan_'.$plan_id.'_list', $lindex('action_id_list', rand(0, $len)));
+            $redis->rpush('plan_'.$plan_id.'_list', $redis->lindex('action_id_list', rand(0, $len)));
         }
 
         $this->redirect($this->webroot.'plans/'.$id);
