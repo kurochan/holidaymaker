@@ -13,8 +13,15 @@ class GenerateController extends AppController{
         $redis = self::getRedis();
         $plan_id = max($redis->lindex('plan_id_list',-1), $redis->lindex('generated_plan_id_list',-1)) + 1;
         $redis->rpush('generated_plan_id_list', $plan_id);
-        $title = "ジェネレーター";
-        $area = "";
+        $titles = array(
+            '楽しいプラン',
+            '忙しめなプラン',
+            'ゆったりプラン',
+            'まったりデート',
+            'わいわいプラン',
+        );
+        $title = $titles[rand(count($titles)) - 1];
+        $area = "???";
         $person = rand(1, 5);
         $money =2500;
         $user_id = $this->Session->read('user_id');
