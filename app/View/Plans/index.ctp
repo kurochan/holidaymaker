@@ -15,11 +15,35 @@
         <table class="table table-bordered" style="border:1px solid gray;">
 
             <?php foreach ($plan as $p){ ?>
-                <td rowspan="3" width="20%"> <?php echo $p['stime'] .'～' .$p['etime']; ?> </td>
-                <td width="80%"> <div align="center"> <font size="+1"> <strong> <?php echo $p['place']; ?> </strong></font></div> </td> <tr>
-                <td width="80%"> <div align="center"> <?php echo $p['money']; ?> </div></td><tr>
-                <td width="80%"> <?php echo $p['text']; ?> </td><tr>
-                <?php if(!empty($p['image'])){ ?>
+                <tr=style="vertical-align:middle;"><td rowspan="3" width="20%" style="text-align:center;"> <?php echo $p['stime'] .'～' .$p['etime']; ?> </td>
+                <td width="80%" background="<?php echo $this->webroot ?>img/images.jpg"> <div align="center"> <font size="+1"> <strong> <?php echo $p['place']; ?> </strong></font></div> </td> </tr>
+                <tr><td width="80%"> <div class="span1 badge badge-warning" align="center"><font size="+0">費用</font></div><div align="center" ><?php echo $p['money']; ?> </div></td></tr>
+                <tr><td width="80%"><div class="span1 badge badge-success" align="center"><font size="+0">メモ</font></div><div align="center"><?php echo $p['text']; ?> </div></td></tr>
+                <?php if(!empty($p['image'])){ 
+                    $original_path = WWW_ROOT.'img/spot/'.$p['image'];
+					$extension = pathinfo($original_path, PATHINFO_EXTENSION);
+					if($extension == 'jpg'){$extension = 'jpeg';}
+					/* 1. 元画像を開く */	
+					$function = "imagecreatefrom".$extension;
+					$original = $function($original_path);
+					$x = imagesx($original);
+					$y = imagesy($original);
+
+					/* 2. 新規TrueColorイメージをリサイズ後のサイズで作る */
+					$resize = imagecreatetruecolor('300', '200');
+
+					/* 3. 1をコピー元、2をコピー先で再サンプリング */
+					imagecopyresampled($resize, $original, 0, 0, 0, 0, '300', '200', $x, $y);
+
+					/* 4. 2を適切な名前で保存、もしくは表示する */
+					$function = 'image'.$extension;
+					$function($resize, WWW_ROOT.'img/spot/rs_'.$p['image']/*$original_path*/);
+
+					/* 5. イメージリソースを開放 */	
+					imagedestroy($original);
+					imagedestroy($resize);
+				?>
+                <tr><td width="20%"></td>
                 <td width="80%"> <div align="center"><img src="<?php echo $this->webroot ?>img/spot/<?php echo $p['image'] ?>" /></div></td><tr>
                 <?php }?>
 
