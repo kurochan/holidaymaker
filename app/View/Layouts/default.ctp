@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>
-		<?php echo __('CakePHP: the rapid development php framework:'); ?>
+		<?php echo __('HolidayMaker　〜あなたの休日を本物に！〜'); ?>
 		<?php echo $title_for_layout; ?>
 	</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,6 +55,7 @@
 				<div class="nav-collapse">
 					<ul class="nav">
 					<li<?php echo $this->name === 'Posts' ? ' class="active"' : '' ?>><a href="<?php echo $this->Html->url(array('controller' => 'Posts', 'action' => 'plan')) ?>"><i class="icon-pencil icon-black"></i>&nbsp;<?php echo __('プラン投稿') ?></a></li>
+					<li<?php echo $this->name === 'generate' ? ' class="active"' : '' ?>><a href="<?php echo $this->Html->url(array('controller' => 'generate', 'action' => 'index')) ?>"><i class="icon-random icon-black"></i>&nbsp;<?php echo __('勝手にプラン作成') ?></a></li>
 					<li><?php if($this->Session->read('login')) { ?>
 						<li<?php echo $this->name === 'Logins' ? ' class="active"' : '' ?>><a href="#"><i class="icon-user icon-black"></i>&nbsp;<?php echo $this->Session->read('user_name') ?>さん</a></li>
 						 <?php } else {?>
@@ -70,7 +71,7 @@
 					</ul>
 
 					<form action = "<?php echo $this->webroot ?>searchs" class="navbar-form pull-right" method="post">
-						<input type="text" name="sword" value="キーワードで検索" onfocus="if (this.value == 'キーワードで検索') { this.value='' }" onblur="if (this.value == '') { this.value='キーワードで検索' }" />
+						<input type="text" name="sword" value="地名で検索" onfocus="if (this.value == '地名で検索') { this.value='' }" onblur="if (this.value == '') { this.value='地名で検索' }" />
             			<button type="submit" class="btn btn-primary">Search</button>
         			</form>
 				</div>
@@ -90,9 +91,9 @@
 
     <div id="footer">
       <div class="container">
-        <p class="muted credit">このWebアプリは<a href="http://niftyjinji.cocolog-nifty.com/blog/2013/06/2013-9ae1.html">ニフティ インターンシップ 夏の勉強会2013</a>で開発されました。</p>
-        <p class="muted credit">Powered by<?php echo $this->Html->image('logo_c4sa.gif'); ?></p>
-      </div>
+    			<center>Copyright © <a href="http://niftyjinji.cocolog-nifty.com/blog/2013/06/2013-9ae1.html"> NIFTY SUMMER INTERNSHIP 2013</a> TEAM KABOOM All Rights Reserved.<br></center>
+				<center>Powered by<a href="http://honttoni.blog74.fc2.com/blog-entry-67.html" target="_blank"> NIFTY Cloud C4SA</a></center>
+	  </div>
     </div>
 
 	<!-- Le javascript
