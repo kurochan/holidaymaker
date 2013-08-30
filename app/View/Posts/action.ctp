@@ -21,7 +21,7 @@
     <input type="file" name="picture1" size="30" /><br />
     <small>※jpg,jpeg,png,gif形式のみ対応しています</small><br>
     <br>
- 	<input type="submit" value="登録" />
+ 	<input type="submit" class="btn btn-primary" value="登録" />
 	</form>
 
 </div>

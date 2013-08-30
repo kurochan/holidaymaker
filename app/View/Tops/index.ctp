@@ -34,6 +34,9 @@
 
     <div class="tab-pane" id="tab2">
     <table class="table table-bordered table-condensed">
+    <thead>
+        <tr style="background-color:#4169e1;color:#ffffff;"><th>プラン名</th><th>場所</th><th>投稿者</th></tr>
+    </thead>
     <tbody>
         <?php foreach($liked_plans as $i => $plan){ ?>
         <tr><td><span class="badge badge-warning"><?php echo ($i + 1) ?>位</span>  <a href="http://ciassff-abq-app000.c4sa.net/Plans/index/<?php echo $plan['id']; ?>" target="_self"><?php echo $plan['title'] ?> </a></td><td><?php echo $plan['area'] ?></td><td><?php echo $plan['user_name'] ?></td></tr>

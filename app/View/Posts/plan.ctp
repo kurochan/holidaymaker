@@ -11,7 +11,7 @@
  		<input type="text" name="person" /><br>
  		費用&nbsp&nbsp <small>例）13000円なら"13000"と入力</small><br>
  		<input type="text" name="money" /><br>
- 	<input type="submit" value="登録" />
+ 	<input type="submit" class="btn btn-primary" value="登録" />
 	</form>
 
 </div>
