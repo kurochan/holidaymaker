@@ -19,7 +19,7 @@ class GenerateController extends AppController{
         $money =2500;
         $user_id = $this->Session->read('user_id');
         $redis->hmset('plan_'.$plan_id,'title',$title,'area',$area,'person',$person,'date',$date,'money',$money,'user_id',$user_id);
-        $redis->zadd('plan_scores', 0, $id);
+        $redis->zadd('plan_scores', 0, $plan_id);
 
         $len = $redis->llen('action_id_list');
         for ($i = 0; $i < rand(1, 4); $i++) {
