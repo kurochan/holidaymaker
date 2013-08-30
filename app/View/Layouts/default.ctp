@@ -71,7 +71,7 @@
 					</ul>
 
 					<form action = "<?php echo $this->webroot ?>searchs" class="navbar-form pull-right" method="post">
-						<input type="text" name="sword" value="地名で検索" onfocus="if (this.value == '地名で検索') { this.value='' }" onblur="if (this.value == '') { this.value='地名で検索' }" />
+						<input type="text" name="sword" value="キーワードで検索" onfocus="if (this.value == 'キーワードで検索') { this.value='' }" onblur="if (this.value == '') { this.value='キーワードで検索' }" />
             			<button type="submit" class="btn btn-primary">Search</button>
         			</form>
 				</div>
@@ -91,7 +91,9 @@
 
     <div id="footer">
       <div class="container">
-    			<center>Copyright © <a href="http://niftyjinji.cocolog-nifty.com/blog/2013/06/2013-9ae1.html"> NIFTY SUMMER INTERNSHIP 2013</a> TEAM KABOOM All Rights Reserved.<br></center>
+    			<center>
+				<br>
+      			<br>Copyright © <a href="http://niftyjinji.cocolog-nifty.com/blog/2013/06/2013-9ae1.html"> NIFTY SUMMER INTERNSHIP 2013</a> TEAM KABOOM All Rights Reserved.<br></center>
 				<center>Powered by<a href="http://honttoni.blog74.fc2.com/blog-entry-67.html" target="_blank"> NIFTY Cloud C4SA</a></center>
 	  </div>
     </div>
