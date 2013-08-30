@@ -29,14 +29,20 @@ $hidden = 'style="visibility:hidden"';
 <div class="row">
     <div class="span9 offset1">            
             <?php for ($i = 0; $i < count($plans); $i++){ ?>
-            <a href="<?php echo 'http://ciassff-abq-app000.c4sa.net/Plans/index/'.$plans[$i]['id']; ?>" target="_self"> <!--plans[$i]の詳細情報ページへのリンクが欲しい-->
-                <table class="table table-bordered" border="4" bgcolor="black">
-                    <td width="100%"> <font size="+3" color="black"> <strong> <?php echo $plans[$i]['title']; ?> </strong></font></div> <br><br><br>
-                    <div align="center" class="span1 badge badge-info"> <font size="+1"> <strong> <?php echo $plans[$i]['area']; ?> </strong> </font> </div>
+            <a href="<?php echo $this->webroot.'Plans/index/'.$plans[$i]['id']; ?>" target="_self"> <!--plans[$i]の詳細情報ページへのリンクが欲しい-->
+                <table style="border:1px solid gray;" class="table table-bordered" width="100%">
+                    <td background="<?php echo $this->webroot ?>img/s_gradation5.gif"><br><font size="+4" color="black" style="FONT-WEIGHT:EXTRA-LIGHT;FONT-STYLE:ITALIC;"><?php echo $plans[$i]['title']; ?></font><br><br><tr>
+                    <td><div class="pull-right"><div align="center" class="span1 badge badge-info"> <font size="+1"> <strong> <?php echo $plans[$i]['area']; ?> </strong> </font> </div>
                     <div align="center" class="span1 badge badge-success"> <font size="+1"> <strong> <?php echo $plans[$i]['person']; ?> </strong> </font> </div>
                     <div align="center" class="span1 badge badge-warning"> <font size="+1"> <strong> <?php echo $plans[$i]['money']; ?> </strong> </font> </div>
-                    </td>
+                    </div></td>
                 </table>
+			    <!--<div  style="border-style: solid ; border-width: 1px;">
+                    <p><font size="+10" color="black" style="FONT-WEIGHT:EXTRA-LIGHT;FONT-STYLE:ITALIC;"><?php echo $plans[$i]['title']; ?></font><br><br><br><p>
+                    <p align="right" size="+1"><strong><div align="center" class="span1 badge badge-info"> <?php echo $plans[$i]['area']; ?> 
+                    <div align="center" class="span1 badge badge-success"> <?php echo $plans[$i]['person']; ?> </div>
+                    <div align="center" class="span1 badge badge-warning"> <?php echo $plans[$i]['money']; ?> </div></strong></p>
+                </div>-->
                 <br>
             </a>
 			<?php
