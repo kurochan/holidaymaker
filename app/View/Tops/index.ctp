@@ -39,7 +39,7 @@
     </thead>
     <tbody>
         <?php foreach($liked_plans as $i => $plan){ ?>
-        <tr><td><span class="badge badge-warning"><?php echo ($i + 1) ?>位</span>  <a href="http://ciassff-abq-app000.c4sa.net/Plans/index/<?php echo $plan['id']; ?>" target="_self"><?php echo $plan['title'] ?> </a></td><td><?php echo $plan['area'] ?></td><td><?php echo $plan['user_name'] ?></td></tr>
+        <tr><td><span class="badge badge-warning"><?php echo ($i + 1) ?>位</span>&nbsp&nbsp<a href="<?php echo $this->webroot ?>Plans/index/<?php echo $plan['id']; ?>" target="_self"><?php echo $plan['title'] ?>&nbsp&nbsp&nbsp&nbsp&nbsp<span class="label label-info"><?php echo $plan['liked_number']; ?>いいね！</span></a></td><td><?php echo $plan['area'] ?></td><td><?php echo $plan['user_name'] ?></td></tr>
         <?php } ?>
     </tbody>
     </table>
